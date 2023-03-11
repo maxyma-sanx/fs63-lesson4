@@ -1,7 +1,8 @@
 import { Grid, GridItem, Todo } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFilteredTodos } from 'redux/selectors';
-import { deleteTodo } from 'redux/todoSlice';
+// import { deleteTodo } from 'redux/todoSlice';
+import { deleteTodo } from 'redux/operation';
 
 export const TodoList = () => {
   const todos = useSelector(getFilteredTodos);
