@@ -11,7 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-
+import { filterSlice } from './filterSlice';
 const persistConfig = {
   key: 'root',
   version: 1,
@@ -21,7 +21,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, todosSlice.reducer);
 
 export const store = configureStore({
-  reducer: { todos: persistedReducer },
+  reducer: { todos: persistedReducer, filter: filterSlice.reducer },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
